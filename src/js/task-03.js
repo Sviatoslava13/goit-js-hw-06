@@ -14,12 +14,23 @@ const images = [
   },
 ];
 const imagesContent = document.querySelector('.gallery');
-images.forEach(element => {
+
+const imagesEl = images
+  .map(
+    ({ url, alt }) =>
+      `<li><img src = "${url}" alt = "${alt}"  width = "200" height = "140" /></li>`,
+  )
+  .join('');
+imagesContent.insertAdjacentHTML('afterbegin', imagesEl);
+console.log(imagesEl);
+
+/*images.forEach(element => {
   imagesContent.insertAdjacentHTML(
     'afterbegin',
     `<li><img src = "${element.url}" alt = "${element.alt}"  width = "180" height = "120" /></li>`,
   );
-});
+});*/
+
 imagesContent.style.cssText = `
 display: flex;
  align-items: center;
