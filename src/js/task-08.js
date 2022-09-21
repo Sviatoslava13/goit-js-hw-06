@@ -10,6 +10,7 @@ function contentSubmit(event) {
   if (email.value === '' || password.value === '') {
    return alert('Please fill in all the fields!');
   } 
+  
     const fornInformation = {
       Email: email.value,  Password: password.value }
     console.log(fornInformation);
@@ -17,5 +18,6 @@ function contentSubmit(event) {
       event.currentTarget.reset();
   
 }
+
 
 
